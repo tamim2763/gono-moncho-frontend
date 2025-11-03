@@ -6,6 +6,17 @@
 
 ### 📷 Screenshots
 
+<table>
+  <tr>
+    <td><img width="400" alt="Home Page" src="https://github.com/user-attachments/assets/68539447-0e50-42e4-bbdd-f3d52aaec591" /></td>
+    <td><img width="400" alt="Publish Article Page" src="https://github.com/user-attachments/assets/0401205e-d0fe-42a0-8f62-5734a28e4fe2" /></td>
+  </tr>
+  <tr>
+    <td><img width="400" alt="Verification and Voting" src="https://github.com/user-attachments/assets/8f2478cf-c1fc-4231-ba48-3140bb120dae" /></td>
+    <td><img width="400" alt="Metamask Connection" src="https://github.com/user-attachments/assets/15285e30-abf9-4691-b88b-f771a898f652" /></td>
+  </tr>
+</table>
+
 ---
 
 ### Key Features
