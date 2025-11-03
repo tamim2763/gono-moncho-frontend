@@ -1,4 +1,4 @@
-# Use an official lightweight Node.js image as a base
+# an official lightweight Node.js image as a base
 FROM node:20-alpine
 
 # Set the working directory inside the container

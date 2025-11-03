@@ -1,7 +1,7 @@
 services:
   web:
     build: .
-    platform: linux/amd64 # <-- ADD THIS LINE
+    platform: linux/amd64 
     ports:
       - "3000:3000"
     volumes:

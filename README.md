@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gono Moncho - Decentralized Journalism
 
-## Getting Started
+**Gono Moncho** (which means "People's Platform") is a full-stack dApp (decentralized application) built with Next.js and blockchain technology. It's a prototype for a decentralized ecosystem that aims to combat misinformation by creating a platform for verifiable journalism.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 📷 Screenshots
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Wallet Connection:** Users can connect their Web3 wallet (like MetaMask) to interact with the platform.
+* **Article Publishing:** Connected users can publish new journalistic articles (via the `/publish` page).
+* **Decentralized Verification:** Users can vote on the authenticity of articles, calling smart contract functions like `confirmAuthenticity` and `flagAsMisinformation`.
+* **Category Filtering:** The main feed can be filtered by article category (e..g, "All", "Politics", "Tech") using a shared React Context.
+* **Modern UI:** Built with Next.js, React Server Components, and Tailwind CSS.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### 🛠 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **Framework:** Next.js (App Router)
+* **Blockchain:** `wagmi` for wallet connection and smart contract interaction.
+* **Smart Contract:** Solidity (with ABI `gonoMonchoABI`)
+* **State Management:** React Context (`ArticleContext`)
+* **Styling:** Tailwind CSS
+* **Language:** TypeScript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🏎️ How to Run Locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  Clone the repository:
+    ```bash
+    git clone [https://github.com/tamim2763/gono-moncho-frontend.git](https://github.com/tamim2763/gono-moncho-frontend.git)
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd gono-moncho-frontend
+    ```
+3.  Install the necessary dependencies:
+    ```bash
+    npm install
+    ```
+4.  Run the local development server:
+    ```bash
+    npm run dev
+    ```
+5.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You will need a browser-based wallet like MetaMask installed and connected to the Sepolia test network to use the app's full functionality.
