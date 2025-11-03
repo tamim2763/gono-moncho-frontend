@@ -2,6 +2,14 @@
 
 **Gono Moncho** (which means "People's Platform") is a full-stack dApp (decentralized application) built with Next.js and blockchain technology. It's a prototype for a decentralized ecosystem that aims to combat misinformation by creating a platform for verifiable journalism.
 
+**Note:** This is a fully functional front-end prototype. The smart contract features (voting and flagging) are placeholders and not yet connected to a live contract.
+
+---
+
+### 🚀 Live Demo
+
+[**View the live site here!**](https://gono-moncho-frontend.vercel.app/)
+
 ---
 
 ### 📷 Screenshots
