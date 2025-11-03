@@ -2,16 +2,19 @@
 
 import { useArticles } from "@/context/ArticleContext";
 import VerificationSection from "@/components/VerificationSection";
-import Link from "next/link"; // <-- Make sure Link is imported
+import Link from "next/link";
+import { use } from "react"; // Import the use() hook
 
-// Use an inline props type that matches Next.js expected shape for page components
-export default function ArticlePage({ params }: { params: { id: string } }) {
+export default function ArticlePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { articles } = useArticles();
 
-  // 3. Use the 'id' variable you destructured from params
-  const { id } = params;
+  // Use the use() hook to unwrap the Promise
+  const { id } = use(params);
 
-  // 4. Use the 'id' variable in your find() function
   const article = articles.find((a) => a.id === parseInt(id));
 
   if (!article) {
@@ -46,11 +49,9 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
         )}
 
         <div className="prose lg:prose-xl max-w-none">
-          {/* This is the unescaped apostrophe fix from before */}
           <p>{article.fullContent.replace(/'/g, "&apos;")}</p>
         </div>
 
-        {/* 5. Call VerificationSection with NO props */}
         <VerificationSection />
       </article>
     </main>
