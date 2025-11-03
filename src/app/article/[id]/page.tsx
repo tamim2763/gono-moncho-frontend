@@ -4,15 +4,8 @@ import { useArticles } from "@/context/ArticleContext";
 import VerificationSection from "@/components/VerificationSection";
 import Link from "next/link"; // <-- Make sure Link is imported
 
-// 1. Define the correct type for the page's props
-type ArticlePageProps = {
-  params: {
-    id: string;
-  };
-};
-
-// 2. Use the new type in the component definition
-export default function ArticlePage({ params }: ArticlePageProps) {
+// Use an inline props type that matches Next.js expected shape for page components
+export default function ArticlePage({ params }: { params: { id: string } }) {
   const { articles } = useArticles();
 
   // 3. Use the 'id' variable you destructured from params
