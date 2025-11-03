@@ -5,6 +5,10 @@
 ---
 
 ### 📷 Screenshots
+<img width="960" height="540" alt="home page" src="https://github.com/user-attachments/assets/68539447-0e50-42e4-bbdd-f3d52aaec591" />
+<img width="960" height="540" alt="Verification and voting" src="https://github.com/user-attachments/assets/8f2478cf-c1fc-4231-ba48-3140bb120dae" />
+<img width="960" height="540" alt="Metamask connection" src="https://github.com/user-attachments/assets/15285e30-abf9-4691-b88b-f771a898f652" />
+<img width="960" height="540" alt="publish article page" src="https://github.com/user-attachments/assets/0401205e-d0fe-42a0-8f62-5734a28e4fe2" />
 
 ---
 
