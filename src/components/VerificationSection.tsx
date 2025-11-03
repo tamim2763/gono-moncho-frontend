@@ -10,21 +10,11 @@ export default function VerificationSection({ articleId }: { articleId: number }
   const { writeContract } = useWriteContract();
 
   const handleVerify = () => {
-    writeContract({
-      address: contractAddress,
-      abi: gonoMonchoABI,
-      functionName: 'confirmAuthenticity',
-      args: [BigInt(articleId)], // We convert the ID to BigInt for the smart contract
-    });
+    alert("Smart contract integration is in progress!");
   };
 
   const handleFlag = () => {
-    writeContract({
-      address: contractAddress,
-      abi: gonoMonchoABI,
-      functionName: 'flagAsMisinformation',
-      args: [BigInt(articleId)],
-    });
+    alert("Smart contract integration is in progress!");
   };
 
   return (
