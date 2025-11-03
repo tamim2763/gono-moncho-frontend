@@ -2,6 +2,7 @@
 
 import { useArticles } from "@/context/ArticleContext";
 import VerificationSection from "@/components/VerificationSection";
+import Link from "next/link"; // <-- Make sure Link is imported
 
 // 1. Define the correct type for the page's props
 type ArticlePageProps = {
@@ -22,8 +23,14 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   if (!article) {
     return (
-      <main className="container mx-auto px-4 py-8">
-        <p>Article not found.</p>
+      <main className="container mx-auto p-8 text-center">
+        <h1 className="text-3xl font-bold">Article not found.</h1>
+        <Link
+          href="/"
+          className="text-blue-600 hover:underline mt-4 inline-block"
+        >
+          &larr; Back to homepage
+        </Link>
       </main>
     );
   }
