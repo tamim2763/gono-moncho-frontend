@@ -1,14 +1,7 @@
 "use client";
 
-import { useWriteContract } from 'wagmi';
-import { gonoMonchoABI } from '@/lib/abi';
-
-const contractAddress = '0x0000000000000000000000000000000000000000';
-
 // The component now accepts the article's ID as a prop
-export default function VerificationSection({ articleId }: { articleId: number }) {
-  const { writeContract } = useWriteContract();
-
+export default function VerificationSection() {
   const handleVerify = () => {
     alert("Smart contract integration is in progress!");
   };
@@ -21,7 +14,8 @@ export default function VerificationSection({ articleId }: { articleId: number }
     <div className="mt-8 pt-6 border-t">
       <h3 className="text-2xl font-bold mb-4">Cast Your Vote</h3>
       <p className="text-gray-600 mb-4">
-        As a verified user, your vote contributes to the article's reputation score. Please review carefully before voting.
+        As a verified user, your vote contributes to the article&apos;s
+        reputation score. Please review carefully before voting.
       </p>
       <div className="flex items-center gap-4">
         <button
