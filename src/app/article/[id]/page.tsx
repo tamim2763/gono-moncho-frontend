@@ -1,83 +1,58 @@
 "use client";
 
 import { useArticles } from "@/context/ArticleContext";
-import Link from "next/link";
-import AnalysisSection from "@/components/AnalysisSection";
 import VerificationSection from "@/components/VerificationSection";
 
+// 1. Define the correct type for the page's props
 type ArticlePageProps = {
   params: {
     id: string;
   };
 };
 
-// We no longer import useUserRole
-
-export default function ArticleDetailPage({ params }: ArticlePageProps) {
-  const { id } = params;
+// 2. Use the new type in the component definition
+export default function ArticlePage({ params }: ArticlePageProps) {
   const { articles } = useArticles();
+
+  // 3. Use the 'id' variable you destructured from params
+  const { id } = params;
+
+  // 4. Use the 'id' variable in your find() function
   const article = articles.find((a) => a.id === parseInt(id));
-  // We no longer use the useUserRole hook here
 
   if (!article) {
     return (
-      <main className="container mx-auto p-8 text-center">
-        <h1 className="text-3xl font-bold">Article not found.</h1>
-        <Link
-          href="/"
-          className="text-blue-600 hover:underline mt-4 inline-block"
-        >
-          &larr; Back to homepage
-        </Link>
+      <main className="container mx-auto px-4 py-8">
+        <p>Article not found.</p>
       </main>
     );
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <main className="container mx-auto p-4 sm:p-6 lg:p-8">
-        <div className="bg-white p-8 rounded-lg shadow-md">
-          {/* Article details, metadata, and video are unchanged */}
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
-            {article.headline}
-          </h1>
-          <div className="flex items-center gap-4 mb-8 text-sm text-gray-500">
-            <span>By: {article.author}</span>
-            <span>|</span>
-            <span>
-              Status:{" "}
-              <span
-                className={
-                  article.status === "Verified"
-                    ? "text-green-600"
-                    : "text-yellow-600"
-                }
-              >
-                {article.status}
-              </span>
-            </span>
-          </div>
-          {article.videoUrl && (
-            <div className="mb-8 max-w-4xl mx-auto">
-              <video
-                src={article.videoUrl}
-                controls
-                className="w-full rounded-lg shadow-lg"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          )}
-          <div className="prose lg:prose-xl max-w-none mb-8">
-            <p>{article.summary}</p>
-          </div>
+    <main className="container mx-auto px-4 py-8 max-w-3xl">
+      <article>
+        <h1 className="text-4xl font-bold mb-4">{article.headline}</h1>
+        <p className="text-gray-600 mb-2">By: {article.author}</p>
+        <p className="text-sm text-green-600 font-semibold mb-6">
+          Status: {article.status}
+        </p>
 
-          <VerificationSection />
+        {article.imageUrl && (
+          <img
+            src={article.imageUrl}
+            alt={article.headline}
+            className="w-full h-auto rounded-lg mb-6"
+          />
+        )}
 
-          {/* Analysis section is now always visible */}
-          <AnalysisSection />
+        <div className="prose lg:prose-xl max-w-none">
+          {/* This is the unescaped apostrophe fix from before */}
+          <p>{article.fullContent.replace(/'/g, "&apos;")}</p>
         </div>
-      </main>
-    </div>
+
+        {/* 5. Call VerificationSection with NO props */}
+        <VerificationSection />
+      </article>
+    </main>
   );
 }
