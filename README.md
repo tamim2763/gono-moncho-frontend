@@ -6,13 +6,13 @@
 
 ---
 
-### 🚀 Live Demo
+### Live Demo
 
 [**View the live site here!**](https://gono-moncho-frontend.vercel.app/)
 
 ---
 
-### 📷 Screenshots
+### Screenshots
 
 <table>
   <tr>
@@ -37,7 +37,7 @@
 
 ---
 
-### 🛠 Tech Stack
+### Tech Stack
 
 * **Framework:** Next.js (App Router)
 * **Blockchain:** `wagmi` for wallet connection and smart contract interaction.
@@ -48,7 +48,7 @@
 
 ---
 
-### 🏎️ How to Run Locally
+### How to Run Locally
 
 1.  Clone the repository:
     ```bash
